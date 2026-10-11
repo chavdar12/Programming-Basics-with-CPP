@@ -7,7 +7,8 @@ int main() {
 
     std::cin >> excursion_price >> puzzle_count >> doll_count >> teddy_bear_count >> minion_count >> truck_count;
 
-    double total_toys_price = (puzzle_count * 2.60) + (doll_count * 3.00) + (teddy_bear_count * 4.10) + (minion_count * 8.20) + (truck_count * 2.00);
+    double total_toys_price = (puzzle_count * 2.60) + (doll_count * 3.00) + (teddy_bear_count * 4.10) + (
+                                  minion_count * 8.20) + (truck_count * 2.00);
 
     if ((puzzle_count + doll_count + teddy_bear_count + minion_count + truck_count) >= 50) {
         total_toys_price *= 0.75;

@@ -1,24 +1,18 @@
 #include <iostream>
 #include <unordered_set>
 
-int main()
-{
+int main() {
     std::string product;
     std::cin >> product;
 
     const std::unordered_set<std::string> fruits = {"banana", "apple", "kiwi", "cherry", "lemon", "grapes"};
     const std::unordered_set<std::string> vegetables = {"tomato", "cucumber", "pepper", "carrot"};
 
-    if (fruits.count(product))
-    {
+    if (fruits.count(product)) {
         std::cout << "fruit" << '\n';
-    }
-    else if (vegetables.count(product))
-    {
+    } else if (vegetables.count(product)) {
         std::cout << "vegetable" << '\n';
-    }
-    else
-    {
+    } else {
         std::cout << "unknown" << '\n';
     }
 

@@ -2,8 +2,7 @@
 #include <vector>
 #include <iomanip>
 
-int main()
-{
+int main() {
     int num_groups;
     std::cin >> num_groups;
 
@@ -13,23 +12,19 @@ int main()
 
     int total_people = 0;
 
-    for (int i = 0; i < num_groups; ++i)
-    {
+    for (int i = 0; i < num_groups; ++i) {
         std::cin >> group_sizes[i];
         total_people += group_sizes[i];
 
-        for (int j = 0; j < ranges.size(); ++j)
-        {
-            if (group_sizes[i] <= ranges[j])
-            {
+        for (int j = 0; j < ranges.size(); ++j) {
+            if (group_sizes[i] <= ranges[j]) {
                 counts[j] += group_sizes[i];
                 break;
             }
         }
     }
 
-    for (const int count : counts)
-    {
+    for (const int count: counts) {
         const double percentage = (static_cast<double>(count) / total_people) * 100;
         std::cout << std::fixed << std::setprecision(2) << percentage << "%" << '\n';
     }

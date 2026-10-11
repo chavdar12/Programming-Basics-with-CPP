@@ -1,12 +1,10 @@
 #include <iostream>
 
-int main()
-{
+int main() {
     double grade;
     std::cin >> grade;
 
-    if (grade >= 5.50)
-    {
+    if (grade >= 5.50) {
         std::cout << "Excellent!" << '\n';
     }
 }

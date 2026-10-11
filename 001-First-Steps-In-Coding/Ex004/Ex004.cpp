@@ -1,7 +1,6 @@
 #include<iostream>
 
-int main(int argc, char* argv[])
-{
+int main(char *argv[]) {
     int num;
     std::cin >> num;
 

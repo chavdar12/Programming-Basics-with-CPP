@@ -3,13 +3,12 @@
 #include <iomanip>
 #include <map>
 
-int main()
-{
+int main() {
     double budget;
     std::string season;
     std::cin >> budget >> season;
 
-    std::map<std::string, std::pair<double, double>> destination_costs = {
+    std::map<std::string, std::pair<double, double> > destination_costs = {
         {"Bulgaria", {0.3, 0.7}},
         {"Balkans", {0.4, 0.8}},
         {"Europe", {0.9, 0.9}}
@@ -17,16 +16,11 @@ int main()
 
     std::string destination;
 
-    if (budget <= 100)
-    {
+    if (budget <= 100) {
         destination = "Bulgaria";
-    }
-    else if (budget <= 1000)
-    {
+    } else if (budget <= 1000) {
         destination = "Balkans";
-    }
-    else
-    {
+    } else {
         destination = "Europe";
     }
 

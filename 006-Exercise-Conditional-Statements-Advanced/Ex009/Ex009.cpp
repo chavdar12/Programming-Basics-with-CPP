@@ -2,8 +2,7 @@
 #include <iomanip>
 #include <map>
 
-int main()
-{
+int main() {
     int days;
     std::string room_type, feedback;
     std::cin >> days >> room_type >> feedback;
@@ -15,18 +14,12 @@ int main()
 
     double total_price = price_per_night * (days - 1);
 
-    if (room_type != "room for one person")
-    {
-        if (days > 15)
-        {
+    if (room_type != "room for one person") {
+        if (days > 15) {
             total_price *= (room_type == "apartment") ? 0.50 : 0.80;
-        }
-        else if (days >= 10)
-        {
+        } else if (days >= 10) {
             total_price *= (room_type == "apartment") ? 0.65 : 0.85;
-        }
-        else
-        {
+        } else {
             total_price *= 0.70;
         }
     }

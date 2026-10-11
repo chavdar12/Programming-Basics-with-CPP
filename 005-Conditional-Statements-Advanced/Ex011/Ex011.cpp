@@ -3,8 +3,7 @@
 #include <string>
 #include <unordered_map>
 
-int main()
-{
+int main() {
     std::string fruit, day;
     double quantity;
 
@@ -21,21 +20,15 @@ int main()
     };
 
     double price = 0;
-    if (day == "Monday" || day == "Tuesday" || day == "Wednesday" || day == "Thursday" || day == "Friday")
-    {
+    if (day == "Monday" || day == "Tuesday" || day == "Wednesday" || day == "Thursday" || day == "Friday") {
         if (weekday_prices.count(fruit)) price = weekday_prices[fruit];
-    }
-    else if (day == "Saturday" || day == "Sunday")
-    {
+    } else if (day == "Saturday" || day == "Sunday") {
         if (weekend_prices.count(fruit)) price = weekend_prices[fruit];
     }
 
-    if (price != 0.0)
-    {
+    if (price != 0.0) {
         std::cout << std::fixed << std::setprecision(2) << quantity * price << '\n';
-    }
-    else
-    {
+    } else {
         std::cout << "error" << '\n';
     }
 

@@ -2,8 +2,7 @@
 #include <iomanip>
 #include <unordered_map>
 
-int main()
-{
+int main() {
     std::string projection_type;
     int rows, columns;
 

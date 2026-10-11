@@ -1,8 +1,7 @@
 #include <iomanip>
 #include <iostream>
 
-int main()
-{
+int main() {
     double deposited_amount, annual_interest_rate;
     int deposit_period;
 

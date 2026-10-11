@@ -2,8 +2,7 @@
 #include <iomanip>
 #include <string>
 
-int main()
-{
+int main() {
     std::string name;
     std::cin >> name;
 
@@ -12,13 +11,11 @@ int main()
     bool excluded = false;
     int excluded_grade = 0;
 
-    while (grade_count < 12)
-    {
+    while (grade_count < 12) {
         double grade;
         std::cin >> grade;
 
-        if (grade < 4.00)
-        {
+        if (grade < 4.00) {
             excluded = true;
             excluded_grade = grade_count + 1;
             break;
@@ -28,15 +25,12 @@ int main()
         grade_count++;
     }
 
-    if (excluded)
-    {
+    if (excluded) {
         std::cout << name << " has been excluded at " << excluded_grade << " grade" << '\n';
-    }
-    else
-    {
+    } else {
         const double average_grade = sum_grades / grade_count;
         std::cout << name << " graduated. Average grade: " << std::fixed << std::setprecision(2) << average_grade <<
-            '\n';
+                '\n';
     }
 
     return 0;

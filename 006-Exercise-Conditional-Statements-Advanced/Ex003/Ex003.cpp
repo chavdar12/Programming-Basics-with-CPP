@@ -3,14 +3,13 @@
 #include <string>
 #include <map>
 
-int main()
-{
+int main() {
     std::string flower_type;
     int flower_count, budget;
 
     std::cin >> flower_type >> flower_count >> budget;
 
-    std::map<std::string, std::pair<double, double>> flower_prices = {
+    std::map<std::string, std::pair<double, double> > flower_prices = {
         {"Roses", {5.00, 0.1}},
         {"Dahlias", {3.80, 0.15}},
         {"Tulips", {2.80, 0.15}},
@@ -32,8 +31,8 @@ int main()
     std::cout << std::fixed << std::setprecision(2);
     if (remaining_budget >= 0)
         std::cout << "Hey, you have a great garden with " << flower_count << " " << flower_type << " and " <<
-            remaining_budget
-            << " leva left." << '\n';
+                remaining_budget
+                << " leva left." << '\n';
     else
         std::cout << "Not enough money, you need " << -remaining_budget << " leva more." << '\n';
 

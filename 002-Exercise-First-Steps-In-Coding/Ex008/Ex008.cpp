@@ -1,7 +1,6 @@
 #include <iostream>
 
-int main()
-{
+int main() {
     int annual_fee;
     std::cin >> annual_fee;
 

@@ -2,8 +2,7 @@
 #include <iomanip>
 #include <map>
 
-int main()
-{
+int main() {
     int num_tournaments, initial_points;
     std::cin >> num_tournaments >> initial_points;
 
@@ -11,14 +10,12 @@ int main()
     int total_points = initial_points;
     int total_wins = 0;
 
-    for (int i = 0; i < num_tournaments; ++i)
-    {
+    for (int i = 0; i < num_tournaments; ++i) {
         char stage;
         std::cin >> stage;
 
         total_points += points[stage];
-        if (stage == 'W')
-        {
+        if (stage == 'W') {
             ++total_wins;
         }
     }

@@ -1,8 +1,7 @@
 #include <iostream>
 #include <array>
 
-int main()
-{
+int main() {
     double change;
     std::cin >> change;
 
@@ -11,8 +10,7 @@ int main()
 
     const std::array<int, 9> coin_values = {200, 100, 50, 20, 10, 5, 2, 1};
 
-    for (const int value : coin_values)
-    {
+    for (const int value: coin_values) {
         coins += cents / value;
         cents %= value;
     }

@@ -1,8 +1,7 @@
 #include <iostream>
 #include <array>
 
-int main()
-{
+int main() {
     int day_number;
     std::cin >> day_number;
 

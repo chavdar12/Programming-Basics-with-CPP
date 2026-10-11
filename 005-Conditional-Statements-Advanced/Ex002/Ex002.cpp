@@ -1,8 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 
-int main()
-{
+int main() {
     std::string day;
     std::cin >> day;
 

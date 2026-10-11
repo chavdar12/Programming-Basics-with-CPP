@@ -1,8 +1,7 @@
 #include <iostream>
 #include <unordered_map>
 
-int main()
-{
+int main() {
     std::string day;
     std::cin >> day;
 
@@ -12,12 +11,9 @@ int main()
         {"Saturday", 16}, {"Sunday", 16}
     };
 
-    if (price_map.count(day))
-    {
+    if (price_map.count(day)) {
         std::cout << "Ticket price for " << day << ": " << price_map[day] << '\n';
-    }
-    else
-    {
+    } else {
         std::cout << "Invalid day!" << '\n';
     }
 

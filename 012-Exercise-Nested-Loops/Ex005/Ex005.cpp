@@ -28,7 +28,7 @@ int main() {
         }
     }
 
-    for (const auto& num : special_numbers) {
+    for (const auto &num: special_numbers) {
         std::cout << num << " ";
     }
 

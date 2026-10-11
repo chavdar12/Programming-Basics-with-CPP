@@ -2,23 +2,19 @@
 #include <iomanip>
 #include <string>
 
-int main()
-{
+int main() {
     double total = 0;
     std::string input;
 
-    while (true)
-    {
+    while (true) {
         std::cin >> input;
 
-        if (input == "NoMoreMoney")
-        {
+        if (input == "NoMoreMoney") {
             break;
         }
 
         const double amount = std::stod(input);
-        if (amount < 0)
-        {
+        if (amount < 0) {
             std::cout << "Invalid operation!" << '\n';
             return 0;
         }

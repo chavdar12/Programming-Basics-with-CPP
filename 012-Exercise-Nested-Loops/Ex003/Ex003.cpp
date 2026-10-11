@@ -1,26 +1,21 @@
 #include <iostream>
 #include <string>
 
-bool is_prime(const int num)
-{
+bool is_prime(const int num) {
     if (num <= 1) return false;
-    for (int i = 2; i * i <= num; ++i)
-    {
+    for (int i = 2; i * i <= num; ++i) {
         if (num % i == 0) return false;
     }
     return true;
 }
 
-int main()
-{
+int main() {
     long long prime_sum = 0, non_prime_sum = 0;
     std::string input;
 
-    while (std::cin >> input && input != "stop")
-    {
+    while (std::cin >> input && input != "stop") {
         const int num = std::stoi(input);
-        if (num < 0)
-        {
+        if (num < 0) {
             std::cout << "Number is negative.\n";
             continue;
         }

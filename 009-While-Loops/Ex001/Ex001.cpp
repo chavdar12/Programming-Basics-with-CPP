@@ -1,16 +1,13 @@
 #include <iostream>
 #include <string>
 
-int main()
-{
+int main() {
     std::string input;
 
-    while (true)
-    {
+    while (true) {
         std::cin >> input;
 
-        if (input == "Stop")
-        {
+        if (input == "Stop") {
             break;
         }
 

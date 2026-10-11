@@ -1,8 +1,7 @@
 #include <iostream>
 #include <unordered_set>
 
-int main()
-{
+int main() {
     int hour;
     std::string day;
 

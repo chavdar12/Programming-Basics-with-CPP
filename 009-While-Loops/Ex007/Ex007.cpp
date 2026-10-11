@@ -1,22 +1,18 @@
 #include <iostream>
 #include <climits>
 
-int main()
-{
+int main() {
     int min = INT_MAX;
     int num;
 
-    while (true)
-    {
+    while (true) {
         std::cin >> num;
 
-        if (num == -1)
-        {
+        if (num == -1) {
             break;
         }
 
-        if (num < min)
-        {
+        if (num < min) {
             min = num;
         }
     }

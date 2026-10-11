@@ -1,8 +1,7 @@
 #include <iomanip>
 #include <iostream>
 
-int main()
-{
+int main() {
     int pencils, markers, liters_of_cleaner, discount_percent;
     constexpr double pencil_price = 5.80;
     constexpr double marker_price = 7.20;
@@ -11,7 +10,7 @@ int main()
     std::cin >> pencils >> markers >> liters_of_cleaner >> discount_percent;
 
     const double total_price = pencils * pencil_price + markers * marker_price + liters_of_cleaner *
-        cleaner_price_per_liter;
+                               cleaner_price_per_liter;
 
     const double discounted_price = total_price - (total_price * discount_percent / 100.0);
 

@@ -3,8 +3,7 @@
 #include <iomanip>
 #include <map>
 
-int main()
-{
+int main() {
     int budget, fishermen;
     std::string season;
 
@@ -16,33 +15,24 @@ int main()
 
     double price = season_prices[season];
 
-    if (fishermen <= 6)
-    {
+    if (fishermen <= 6) {
         price *= 0.9;
-    }
-    else if (fishermen <= 11)
-    {
+    } else if (fishermen <= 11) {
         price *= 0.85;
-    }
-    else
-    {
+    } else {
         price *= 0.75;
     }
 
-    if (fishermen % 2 == 0 && season != "Autumn")
-    {
+    if (fishermen % 2 == 0 && season != "Autumn") {
         price *= 0.95;
     }
 
     const double remaining = budget - price;
 
     std::cout << std::fixed << std::setprecision(2);
-    if (remaining >= 0)
-    {
+    if (remaining >= 0) {
         std::cout << "Yes! You have " << remaining << " leva left." << '\n';
-    }
-    else
-    {
+    } else {
         std::cout << "Not enough money! You need " << -remaining << " leva." << '\n';
     }
 

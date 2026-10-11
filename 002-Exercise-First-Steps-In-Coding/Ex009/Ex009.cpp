@@ -1,7 +1,6 @@
 #include <iostream>
 
-int main()
-{
+int main() {
     int length, width, height;
     double percent;
 

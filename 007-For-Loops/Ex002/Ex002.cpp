@@ -1,12 +1,10 @@
 #include <iostream>
 
-int main()
-{
+int main() {
     int n;
     std::cin >> n;
 
-    for (int i = n; i >= 1; i--)
-    {
+    for (int i = n; i >= 1; i--) {
         std::cout << i << " ";
     }
     std::cout << '\n';
