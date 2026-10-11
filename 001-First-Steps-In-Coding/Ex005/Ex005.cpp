@@ -1,10 +1,10 @@
-#include<iostream>
+#include <iostream>
 
 int main() {
-    std::string name;
-    std::cin >> name;
+  std::string name;
+  std::cin >> name;
 
-    printf("Hello, %s!", name.c_str());
+  printf("Hello, %s!", name.c_str());
 
-    return 0;
+  return 0;
 }

@@ -1,6 +1,6 @@
-#include<iostream>
+#include <iostream>
 
 int main() {
-    std::cout << "Hello SoftUni!" << '\n';
-    return 0;
+  std::cout << "Hello SoftUni!" << '\n';
+  return 0;
 }

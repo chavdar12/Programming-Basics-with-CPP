@@ -1,10 +1,10 @@
-#include<iostream>
+#include <iostream>
 
 int main() {
-    int num1, num2;
+  int num1, num2;
 
-    std::cin >> num1 >> num2;
+  std::cin >> num1 >> num2;
 
-    std::cout << num1 * num2 << '\n';
-    return 0;
+  std::cout << num1 * num2 << '\n';
+  return 0;
 }
