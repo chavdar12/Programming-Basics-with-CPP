@@ -2,17 +2,17 @@
 #include <string>
 
 int main() {
-    std::string input;
+  std::string input;
 
-    while (true) {
-        std::cin >> input;
+  while (true) {
+    std::cin >> input;
 
-        if (input == "Stop") {
-            break;
-        }
-
-        std::cout << input << '\n';
+    if (input == "Stop") {
+      break;
     }
 
-    return 0;
+    std::cout << input << '\n';
+  }
+
+  return 0;
 }

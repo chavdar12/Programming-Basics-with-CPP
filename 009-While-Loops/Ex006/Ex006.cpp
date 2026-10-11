@@ -1,23 +1,23 @@
-#include <iostream>
 #include <climits>
+#include <iostream>
 
 int main() {
-    int max = INT_MIN;
-    int num;
+  int max = INT_MIN;
+  int num;
 
-    while (true) {
-        std::cin >> num;
+  while (true) {
+    std::cin >> num;
 
-        if (num == -1) {
-            break;
-        }
-
-        if (num > max) {
-            max = num;
-        }
+    if (num == -1) {
+      break;
     }
 
-    std::cout << max << '\n';
+    if (num > max) {
+      max = num;
+    }
+  }
 
-    return 0;
+  std::cout << max << '\n';
+
+  return 0;
 }
