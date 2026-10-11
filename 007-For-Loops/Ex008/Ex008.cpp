@@ -1,28 +1,28 @@
-#include <iostream>
 #include <climits>
+#include <iostream>
 
 int main() {
-    int n;
-    std::cin >> n;
+  int n;
+  std::cin >> n;
 
-    int max_num = INT_MIN;
-    int min_num = INT_MAX;
+  int max_num = INT_MIN;
+  int min_num = INT_MAX;
 
-    for (int i = 0; i < n; ++i) {
-        int num;
-        std::cin >> num;
+  for (int i = 0; i < n; ++i) {
+    int num;
+    std::cin >> num;
 
-        if (num > max_num) {
-            max_num = num;
-        }
-
-        if (num < min_num) {
-            min_num = num;
-        }
+    if (num > max_num) {
+      max_num = num;
     }
 
-    std::cout << "Max number: " << max_num << '\n';
-    std::cout << "Min number: " << min_num << '\n';
+    if (num < min_num) {
+      min_num = num;
+    }
+  }
 
-    return 0;
+  std::cout << "Max number: " << max_num << '\n';
+  std::cout << "Min number: " << min_num << '\n';
+
+  return 0;
 }

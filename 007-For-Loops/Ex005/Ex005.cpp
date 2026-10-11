@@ -2,12 +2,12 @@
 #include <string>
 
 int main() {
-    std::string text;
-    getline(std::cin, text);
+  std::string text;
+  getline(std::cin, text);
 
-    for (const char ch: text) {
-        std::cout << ch << '\n';
-    }
+  for (const char ch : text) {
+    std::cout << ch << '\n';
+  }
 
-    return 0;
+  return 0;
 }
