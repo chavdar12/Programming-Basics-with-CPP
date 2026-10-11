@@ -1,3 +1,3 @@
-int main(char *argv[]) {
+int main() {
     return 0;
 }

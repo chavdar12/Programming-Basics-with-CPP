@@ -1,6 +1,6 @@
 #include<iostream>
 
-int main(int argc, char *argv[]) {
+int main() {
     std::cout << "Hello SoftUni!" << '\n';
     return 0;
 }

@@ -1,6 +1,6 @@
 #include<iostream>
 
-int main(char *argv[]) {
+int main() {
     int num;
     std::cin >> num;
 

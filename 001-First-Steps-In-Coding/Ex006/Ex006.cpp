@@ -1,6 +1,6 @@
 #include<iostream>
 
-int main(char *argv[]) {
+int main() {
     std::string first_name, last_name, town;
     int age;
     std::cin >> first_name >> last_name >> age >> town;
