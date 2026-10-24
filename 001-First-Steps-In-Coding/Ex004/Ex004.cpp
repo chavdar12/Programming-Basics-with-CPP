@@ -1,9 +1,9 @@
 #include <iostream>
 
 int main() {
-  int num;
-  std::cin >> num;
+  double inches;
+  std::cin >> inches;
 
-  printf("%2f", num * 2.54);
+  std::cout << inches * 2.54 << '\n';
   return 0;
 }

@@ -1,6 +1,5 @@
 #include <iomanip>
 #include <iostream>
-#include <map>
 #include <string>
 
 int main() {
@@ -9,23 +8,20 @@ int main() {
 
   std::cin >> flower_type >> flower_count >> budget;
 
-  std::map<std::string, std::pair<double, double>> flower_prices = {
-      {"Roses", {5.00, 0.1}},
-      {"Dahlias", {3.80, 0.15}},
-      {"Tulips", {2.80, 0.15}},
-      {"Narcissus", {3.00, 0.15}},
-      {"Gladiolus", {2.50, 0.20}}};
+  double total_price = 0.0;
 
-  double price = flower_prices[flower_type].first;
-  double discount = flower_prices[flower_type].second;
+  if (flower_type == "Roses") {
+    total_price = flower_count * 5.00 * (flower_count > 80 ? 0.90 : 1);
+  } else if (flower_type == "Dahlias") {
+    total_price = flower_count * 3.80 * (flower_count > 90 ? 0.85 : 1);
+  } else if (flower_type == "Tulips") {
+    total_price = flower_count * 2.80 * (flower_count > 80 ? 0.85 : 1);
+  } else if (flower_type == "Narcissus") {
+    total_price = flower_count * 3.00 * (flower_count < 120 ? 1.15 : 1);
+  } else if (flower_type == "Gladiolus") {
+    total_price = flower_count * 2.50 * (flower_count < 80 ? 1.20 : 1);
+  }
 
-  if ((flower_type == "Narcissus" || flower_type == "Gladiolus") &&
-      flower_count < 120)
-    price += price * discount;
-  else if (flower_count > 80)
-    discount = -discount;
-
-  const double total_price = flower_count * price * (1 + discount);
   const double remaining_budget = budget - total_price;
 
   std::cout << std::fixed << std::setprecision(2);

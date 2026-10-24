@@ -10,11 +10,11 @@ int main() {
   bool found = false;
 
   while (std::getline(std::cin, book) && book != "No More Books") {
-    books_checked++;
     if (book == searched_book) {
       found = true;
       break;
     }
+    books_checked++;
   }
 
   if (found) {

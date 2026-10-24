@@ -6,9 +6,8 @@ int main() {
 
   std::cin >> target_sum;
 
-  while (current_sum < target_sum) {
-    int number;
-    std::cin >> number;
+  int number;
+  while (current_sum < target_sum && std::cin >> number) {
     current_sum += number;
   }
 

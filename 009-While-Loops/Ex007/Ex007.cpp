@@ -5,13 +5,7 @@ int main() {
   int min = INT_MAX;
   int num;
 
-  while (true) {
-    std::cin >> num;
-
-    if (num == -1) {
-      break;
-    }
-
+  while (std::cin >> num && num != -1) {
     if (num < min) {
       min = num;
     }

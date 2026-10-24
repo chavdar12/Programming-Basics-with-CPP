@@ -1,10 +1,10 @@
 #include <iostream>
+#include <string>
 
 int main() {
   std::string name;
   std::cin >> name;
 
-  printf("Hello, %s!", name.c_str());
-
+  std::cout << "Hello, " << name << "!" << '\n';
   return 0;
 }

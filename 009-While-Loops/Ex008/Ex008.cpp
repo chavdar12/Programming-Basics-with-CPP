@@ -6,33 +6,28 @@ int main() {
   std::string name;
   std::cin >> name;
 
-  int grade_count = 0;
+  int grade = 1;
+  int failures = 0;
   double sum_grades = 0.0;
-  bool excluded = false;
-  int excluded_grade = 0;
+  double annual_grade;
 
-  while (grade_count < 12) {
-    double grade;
-    std::cin >> grade;
-
-    if (grade < 4.00) {
-      excluded = true;
-      excluded_grade = grade_count + 1;
-      break;
+  // A failed year (< 4.00) is repeated once; a second failure means exclusion.
+  while (grade <= 12 && std::cin >> annual_grade) {
+    if (annual_grade < 4.00) {
+      if (++failures > 1) {
+        std::cout << name << " has been excluded at " << grade << " grade"
+                  << '\n';
+        return 0;
+      }
+      continue;
     }
 
-    sum_grades += grade;
-    grade_count++;
+    sum_grades += annual_grade;
+    ++grade;
   }
 
-  if (excluded) {
-    std::cout << name << " has been excluded at " << excluded_grade << " grade"
-              << '\n';
-  } else {
-    const double average_grade = sum_grades / grade_count;
-    std::cout << name << " graduated. Average grade: " << std::fixed
-              << std::setprecision(2) << average_grade << '\n';
-  }
+  std::cout << name << " graduated. Average grade: " << std::fixed
+            << std::setprecision(2) << sum_grades / 12 << '\n';
 
   return 0;
 }

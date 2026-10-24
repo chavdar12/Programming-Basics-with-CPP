@@ -9,7 +9,7 @@ int main() {
   int boxes_space = 0;
   std::string command;
 
-  while (std::cin >> command && boxes_space <= total_space) {
+  while (boxes_space <= total_space && std::cin >> command) {
     if (command == "Done") {
       std::cout << total_space - boxes_space << " Cubic meters left.\n";
       break;

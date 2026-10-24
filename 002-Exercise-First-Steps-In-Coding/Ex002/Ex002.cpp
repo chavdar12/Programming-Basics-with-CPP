@@ -1,9 +1,11 @@
+#include <iomanip>
 #include <iostream>
 
 int main() {
-  int num;
-  std::cin >> num;
+  double radians;
+  std::cin >> radians;
 
-  printf("%.2f", num * 180 / 3.14);
+  std::cout << std::fixed << std::setprecision(2) << radians * 180 / 3.14
+            << '\n';
   return 0;
 }

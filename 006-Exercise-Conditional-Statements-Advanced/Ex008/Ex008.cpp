@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iomanip>
 #include <iostream>
 
@@ -5,27 +6,26 @@ int main() {
   int exam_hour, exam_minute, arrival_hour, arrival_minute;
   std::cin >> exam_hour >> exam_minute >> arrival_hour >> arrival_minute;
 
-  const int exam_time_in_minutes = exam_hour * 60 + exam_minute;
-  const int arrival_time_in_minutes = arrival_hour * 60 + arrival_minute;
-  const int time_difference = arrival_time_in_minutes - exam_time_in_minutes;
+  const int time_difference =
+      (arrival_hour * 60 + arrival_minute) - (exam_hour * 60 + exam_minute);
 
-  std::string status;
   if (time_difference > 0) {
-    status = "Late";
-  } else if (time_difference <= 30) {
-    status = "On time";
+    std::cout << "Late" << '\n';
+  } else if (time_difference >= -30) {
+    std::cout << "On time" << '\n';
   } else {
-    status = "Early";
+    std::cout << "Early" << '\n';
   }
 
-  std::cout << status << '\n';
-
   if (time_difference != 0) {
-    const int hours = std::abs(time_difference) / 60;
-    const int minutes = std::abs(time_difference) % 60;
-    const std::string when = (time_difference > 0) ? "after" : "before";
-    std::cout << hours << ":" << std::setw(2) << std::setfill('0') << minutes
-              << " hours " << when << " the start" << '\n';
+    const int difference = std::abs(time_difference);
+    const char *when = (time_difference > 0) ? "after" : "before";
+    if (difference < 60) {
+      std::cout << difference << " minutes " << when << " the start" << '\n';
+    } else {
+      std::cout << difference / 60 << ":" << std::setw(2) << std::setfill('0')
+                << difference % 60 << " hours " << when << " the start" << '\n';
+    }
   }
 
   return 0;

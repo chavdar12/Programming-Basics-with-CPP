@@ -1,46 +1,42 @@
 #include <iomanip>
 #include <iostream>
-#include <map>
 #include <string>
 
 int main() {
-  std::map<std::string, int> ticket_types = {
-      {"student", 0}, {"standard", 0}, {"kid", 0}};
-  int total_tickets = 0;
+  int student = 0, standard = 0, kid = 0;
+  std::string film_name;
 
-  while (true) {
-    std::string film_name;
-    std::getline(std::cin >> std::ws, film_name);
-
-    if (film_name == "Finish") {
-      break;
-    }
-
+  std::cout << std::fixed << std::setprecision(2);
+  while (std::getline(std::cin >> std::ws, film_name) &&
+         film_name != "Finish") {
     int free_seats;
     std::cin >> free_seats;
 
     std::string ticket_type;
     int sold_tickets = 0;
 
-    while (std::cin >> ticket_type && ticket_type != "End" &&
-           sold_tickets < free_seats) {
-      ticket_types[ticket_type]++;
-      sold_tickets++;
+    while (sold_tickets < free_seats && std::cin >> ticket_type &&
+           ticket_type != "End") {
+      if (ticket_type == "student") {
+        ++student;
+      } else if (ticket_type == "standard") {
+        ++standard;
+      } else if (ticket_type == "kid") {
+        ++kid;
+      }
+      ++sold_tickets;
     }
 
-    total_tickets += sold_tickets;
-
-    double filledPercentage = (sold_tickets * 1.0 / free_seats) * 100.0;
-    std::cout << film_name << " - " << std::fixed << std::setprecision(2)
-              << filledPercentage << "% full." << '\n';
+    std::cout << film_name << " - " << sold_tickets * 100.0 / free_seats
+              << "% full." << '\n';
   }
 
+  const int total_tickets = student + standard + kid;
   std::cout << "Total tickets: " << total_tickets << '\n';
-  for (const auto &[type, count] : ticket_types) {
-    std::cout << std::fixed << std::setprecision(2)
-              << count * 100.0 / total_tickets << "% " << type << " tickets."
-              << '\n';
-  }
+  std::cout << student * 100.0 / total_tickets << "% student tickets." << '\n';
+  std::cout << standard * 100.0 / total_tickets << "% standard tickets."
+            << '\n';
+  std::cout << kid * 100.0 / total_tickets << "% kid tickets." << '\n';
 
   return 0;
 }

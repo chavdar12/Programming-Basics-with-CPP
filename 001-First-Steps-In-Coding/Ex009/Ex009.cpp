@@ -1,11 +1,15 @@
+#include <iomanip>
 #include <iostream>
 
 int main() {
-  int num;
-  std::cin >> num;
+  double square_meters;
+  std::cin >> square_meters;
 
-  printf("The final price is: %.2f lv.\n", num * 7.61 - num * 7.61 * 0.18);
-  printf("The discount is: %.2f lv.", num * 7.61 * 0.18);
+  const double price = square_meters * 7.61;
+  const double discount = price * 0.18;
 
+  std::cout << std::fixed << std::setprecision(2);
+  std::cout << "The final price is: " << price - discount << " lv." << '\n';
+  std::cout << "The discount is: " << discount << " lv." << '\n';
   return 0;
 }

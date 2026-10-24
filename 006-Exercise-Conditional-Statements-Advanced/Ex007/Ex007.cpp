@@ -1,7 +1,7 @@
-#include <functional>
 #include <iomanip>
 #include <iostream>
 #include <map>
+#include <string>
 
 int main() {
   std::string month;
@@ -17,7 +17,11 @@ int main() {
   double apartment_price = prices[month].second * nights;
 
   if (nights > 14) {
-    studio_price *= (month == "May" || month == "October") ? 0.7 : 0.8;
+    if (month == "May" || month == "October") {
+      studio_price *= 0.7;
+    } else if (month == "June" || month == "September") {
+      studio_price *= 0.8;
+    }
     apartment_price *= 0.9;
   } else if (nights > 7 && (month == "May" || month == "October")) {
     studio_price *= 0.95;

@@ -28,7 +28,7 @@ int main() {
                                    : destination_costs[destination].second);
 
   const std::string vacation_type =
-      (destination == "Europe") ? "Hotel" : "Camp";
+      (season == "summer" && destination != "Europe") ? "Camp" : "Hotel";
 
   std::cout << "Somewhere in " << destination << '\n';
   std::cout << vacation_type << " - " << std::fixed << std::setprecision(2)

@@ -13,7 +13,7 @@ int main() {
       if (first_num + second_num == magic_number) {
         std::cout << "Combination N:" << combination_count << " (" << first_num
                   << " + " << second_num << " = " << magic_number << ")"
-                  << std::endl;
+                  << '\n';
         found = true;
         break;
       }

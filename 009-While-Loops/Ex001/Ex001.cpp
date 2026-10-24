@@ -4,13 +4,7 @@
 int main() {
   std::string input;
 
-  while (true) {
-    std::cin >> input;
-
-    if (input == "Stop") {
-      break;
-    }
-
+  while (std::cin >> input && input != "Stop") {
     std::cout << input << '\n';
   }
 

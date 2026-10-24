@@ -1,12 +1,11 @@
-#include <cmath>
 #include <iostream>
 
 int main() {
   int n;
   std::cin >> n;
 
-  for (int i = 0; i <= n; i++) {
-    std::cout << static_cast<int>(pow(2, 2 * i)) << " ";
+  for (int i = 0; i <= n; i += 2) {
+    std::cout << (1LL << i) << " ";
   }
   std::cout << '\n';
 

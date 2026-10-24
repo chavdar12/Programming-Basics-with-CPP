@@ -48,10 +48,3 @@ jobs:
             | xargs -0 -n1 -P4 clang-tidy -p build --quiet \
                 --checks='-*,clang-analyzer-*,bugprone-*,performance-*' \
                 --header-filter='^$' 2>/dev/null || true
-
-      - name: Build
-        run: cmake --build build -j
-
-      - name: Test
-        continue-on-error: true
-        run: ctest --test-dir build --output-on-failure

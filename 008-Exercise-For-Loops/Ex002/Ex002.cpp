@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <cstdlib>
 #include <iostream>
 #include <numeric>
 #include <vector>
@@ -16,9 +17,7 @@ int main() {
   const int sum_except_max =
       std::accumulate(numbers.begin(), numbers.end(), 0) - max_num;
 
-  const auto it = std::find(numbers.begin(), numbers.end(), sum_except_max);
-
-  if (it != numbers.end()) {
+  if (max_num == sum_except_max) {
     std::cout << "Yes\nSum = " << sum_except_max << '\n';
   } else {
     std::cout << "No\nDiff = " << std::abs(max_num - sum_except_max) << '\n';

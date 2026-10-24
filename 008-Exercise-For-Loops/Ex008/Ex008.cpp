@@ -1,34 +1,32 @@
 #include <iomanip>
 #include <iostream>
-#include <map>
+#include <string>
 
 int main() {
   int num_tournaments, initial_points;
   std::cin >> num_tournaments >> initial_points;
 
-  std::map<char, int> points = {{'W', 2000}, {'F', 1200}, {'SF', 720}};
-  int total_points = initial_points;
+  int gained_points = 0;
   int total_wins = 0;
 
   for (int i = 0; i < num_tournaments; ++i) {
-    char stage;
+    std::string stage;
     std::cin >> stage;
 
-    total_points += points[stage];
-    if (stage == 'W') {
+    if (stage == "W") {
+      gained_points += 2000;
       ++total_wins;
+    } else if (stage == "F") {
+      gained_points += 1200;
+    } else if (stage == "SF") {
+      gained_points += 720;
     }
   }
 
-  const double average_points =
-      static_cast<double>(total_points) / num_tournaments;
-  const double win_percentage =
-      static_cast<double>(total_wins) / num_tournaments * 100;
-
-  std::cout << "Final points: " << total_points << '\n';
-  std::cout << "Average points: " << std::fixed << std::setprecision(0)
-            << average_points << '\n';
-  std::cout << std::fixed << std::setprecision(2) << win_percentage << "%"
+  std::cout << "Final points: " << initial_points + gained_points << '\n';
+  std::cout << "Average points: " << gained_points / num_tournaments << '\n';
+  std::cout << std::fixed << std::setprecision(2)
+            << static_cast<double>(total_wins) / num_tournaments * 100 << "%"
             << '\n';
 
   return 0;

@@ -6,11 +6,8 @@ int main() {
 
   std::cin >> username >> password;
 
-  std::cin >> input;
-
-  while (input != password) {
+  while (std::cin >> input && input != password) {
     std::cout << "Incorrect password! Try again: ";
-    std::cin >> input;
   }
 
   std::cout << "Welcome " << username << "!" << '\n';

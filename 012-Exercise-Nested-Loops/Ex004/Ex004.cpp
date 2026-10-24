@@ -1,34 +1,34 @@
 #include <iomanip>
 #include <iostream>
-#include <numeric>
 #include <string>
-#include <vector>
 
 int main() {
   int jurors;
   std::cin >> jurors;
-  std::vector<double> grades(jurors);
 
-  double total_average = 0.0;
+  double total_sum = 0.0;
+  int total_grades = 0;
+  std::string presentation_name;
 
-  for (int i = 0; i < jurors; ++i) {
-    std::string presentation_name;
-    std::getline(std::cin >> std::ws, presentation_name);
-
-    for (double &grade : grades) {
+  std::cout << std::fixed << std::setprecision(2);
+  while (std::getline(std::cin >> std::ws, presentation_name) &&
+         presentation_name != "Finish") {
+    double presentation_sum = 0.0;
+    for (int i = 0; i < jurors; ++i) {
+      double grade;
       std::cin >> grade;
+      presentation_sum += grade;
     }
 
-    const double presentation_average =
-        std::accumulate(grades.begin(), grades.end(), 0.0) / jurors;
-    total_average += presentation_average;
+    total_sum += presentation_sum;
+    total_grades += jurors;
 
-    std::cout << presentation_name << " - " << std::fixed
-              << std::setprecision(2) << presentation_average << "." << '\n';
+    std::cout << presentation_name << " - " << presentation_sum / jurors << "."
+              << '\n';
   }
 
-  std::cout << "Student's final assessment is " << std::fixed
-            << std::setprecision(2) << total_average / jurors << "." << '\n';
+  std::cout << "Student's final assessment is " << total_sum / total_grades
+            << "." << '\n';
 
   return 0;
 }

@@ -1,27 +1,25 @@
 #include <iomanip>
 #include <iostream>
-#include <map>
+#include <string>
 
 int main() {
   int days;
   std::string room_type, feedback;
-  std::cin >> days >> room_type >> feedback;
+  std::cin >> days;
+  std::getline(std::cin >> std::ws, room_type);
+  std::getline(std::cin, feedback);
 
-  std::map<std::string, double> room_prices = {{"room for one person", 18.0},
-                                               {"apartment", 25.0},
-                                               {"president apartment", 35.0}};
-  const double price_per_night = room_prices[room_type];
+  const int nights = days - 1;
+  double total_price = 0.0;
 
-  double total_price = price_per_night * (days - 1);
-
-  if (room_type != "room for one person") {
-    if (days > 15) {
-      total_price *= (room_type == "apartment") ? 0.50 : 0.80;
-    } else if (days >= 10) {
-      total_price *= (room_type == "apartment") ? 0.65 : 0.85;
-    } else {
-      total_price *= 0.70;
-    }
+  if (room_type == "room for one person") {
+    total_price = nights * 18.0;
+  } else if (room_type == "apartment") {
+    total_price = nights * 25.0;
+    total_price *= (days > 15) ? 0.50 : (days >= 10) ? 0.65 : 0.70;
+  } else if (room_type == "president apartment") {
+    total_price = nights * 35.0;
+    total_price *= (days > 15) ? 0.80 : (days >= 10) ? 0.85 : 0.90;
   }
 
   total_price *= (feedback == "positive") ? 1.25 : 0.90;

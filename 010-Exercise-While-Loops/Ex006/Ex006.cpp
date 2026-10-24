@@ -8,7 +8,7 @@ int main() {
   int cake_size = width * length;
   std::string command;
 
-  while (std::cin >> command && cake_size > 0) {
+  while (cake_size > 0 && std::cin >> command) {
     if (command == "STOP") {
       std::cout << cake_size << " pieces are left.\n";
       break;

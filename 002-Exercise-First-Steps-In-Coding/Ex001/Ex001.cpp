@@ -1,9 +1,10 @@
+#include <iomanip>
 #include <iostream>
 
 int main() {
-  int num;
-  std::cin >> num;
+  double usd;
+  std::cin >> usd;
 
-  printf("%.2f", num * 1.79549);
+  std::cout << std::fixed << std::setprecision(2) << usd * 1.79549 << '\n';
   return 0;
 }

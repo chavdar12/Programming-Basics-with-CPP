@@ -1,9 +1,11 @@
+#include <iomanip>
 #include <iostream>
 
 int main() {
-  int num1, num2;
-  std::cin >> num1 >> num2;
+  int dogs, other_animals;
+  std::cin >> dogs >> other_animals;
 
-  printf("%.1f lv.", num1 * 2.50 + num2 * 4);
+  std::cout << std::fixed << std::setprecision(1)
+            << dogs * 2.50 + other_animals * 4 << " lv." << '\n';
   return 0;
 }

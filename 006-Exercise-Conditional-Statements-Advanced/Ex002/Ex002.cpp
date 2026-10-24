@@ -1,5 +1,4 @@
 #include <iostream>
-#include <map>
 #include <string>
 
 int main() {
@@ -8,18 +7,26 @@ int main() {
 
   std::cin >> degrees >> time_of_day;
 
-  std::map<std::string, std::pair<std::string, std::string>> outfits;
+  std::string outfit = "Shirt";
+  std::string shoes = "Moccasins";
 
-  outfits["Morning"] = (degrees >= 25) ? std::make_pair("T-Shirt", "Sandals")
-                                       : std::make_pair("Shirt", "Moccasins");
-  outfits["Afternoon"] =
-      (degrees >= 25)  ? std::make_pair("Swim Suit", "Barefoot")
-      : (degrees > 18) ? std::make_pair("T-Shirt", "Sandals")
-                       : std::make_pair("Shirt", "Moccasins");
-  outfits["Evening"] = std::make_pair("Shirt", "Moccasins");
-
-  const std::string outfit = outfits[time_of_day].first;
-  const std::string shoes = outfits[time_of_day].second;
+  if (time_of_day == "Morning") {
+    if (degrees <= 18) {
+      outfit = "Sweatshirt";
+      shoes = "Sneakers";
+    } else if (degrees >= 25) {
+      outfit = "T-Shirt";
+      shoes = "Sandals";
+    }
+  } else if (time_of_day == "Afternoon") {
+    if (degrees >= 25) {
+      outfit = "Swim Suit";
+      shoes = "Barefoot";
+    } else if (degrees > 18) {
+      outfit = "T-Shirt";
+      shoes = "Sandals";
+    }
+  }
 
   std::cout << "It's " << degrees << " degrees, get your " << outfit << " and "
             << shoes << "." << '\n';

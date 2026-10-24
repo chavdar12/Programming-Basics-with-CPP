@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #include <unordered_map>
 
 int main() {
@@ -13,7 +14,7 @@ int main() {
 
   std::cout << "The class of the animal is: "
             << (animal_class.count(name) ? animal_class[name] : "unknown")
-            << std::endl;
+            << '\n';
 
   return 0;
 }

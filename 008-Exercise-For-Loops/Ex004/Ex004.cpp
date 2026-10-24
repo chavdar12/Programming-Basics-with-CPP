@@ -12,7 +12,7 @@ int main() {
   for (int i = 1; i <= age; ++i) {
     if (i % 2 == 0) {
       birthday_money += 10;
-      saved_money += birthday_money - i / 2;
+      saved_money += birthday_money - 1; // brother takes 1 lv each time
     } else {
       saved_money += toy_price;
     }

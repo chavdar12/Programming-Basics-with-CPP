@@ -1,7 +1,9 @@
 #include <iomanip>
 #include <iostream>
+#include <limits>
 #include <string>
 #include <unordered_map>
+#include <vector>
 
 int main() {
   std::string city;

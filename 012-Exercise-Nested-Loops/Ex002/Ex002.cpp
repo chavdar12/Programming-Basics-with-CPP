@@ -18,7 +18,7 @@ int main() {
 
   bool printed = false;
 
-  for (int i = first + 1; i < second && !printed; ++i) {
+  for (int i = first; i <= second; ++i) {
     if (has_equal_sum(i)) {
       std::cout << i << " ";
       printed = true;

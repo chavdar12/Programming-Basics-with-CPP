@@ -1,4 +1,4 @@
-#include <cmath>
+#include <cstdlib>
 #include <iostream>
 
 int main() {
@@ -20,7 +20,7 @@ int main() {
     right_sum += num;
   }
 
-  const int diff = abs(left_sum - right_sum);
+  const int diff = std::abs(left_sum - right_sum);
 
   if (diff == 0) {
     std::cout << "Yes, sum = " << left_sum << '\n';

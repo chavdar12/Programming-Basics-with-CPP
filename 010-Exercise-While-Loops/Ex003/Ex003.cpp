@@ -11,7 +11,9 @@ int main() {
   while (available_money < excursion_cost && consecutive_days_spent < 5) {
     std::string action;
     double amount;
-    std::cin >> action >> amount;
+    if (!(std::cin >> action >> amount)) {
+      break;
+    }
 
     total_days++;
 

@@ -1,30 +1,24 @@
+#include <algorithm>
+#include <array>
 #include <iomanip>
 #include <iostream>
-#include <vector>
 
 int main() {
   int n;
   std::cin >> n;
 
-  std::vector<int> counts(5, 0);
-  const std::vector<int> ranges = {200, 400, 600, 800, INT_MAX};
+  // Ranges: <200, 200-399, 400-599, 600-799, >=800
+  std::array<int, 5> counts{};
 
   for (int i = 0; i < n; ++i) {
     int num;
     std::cin >> num;
-
-    for (int j = 0; j < ranges.size(); ++j) {
-      if (num < ranges[j]) {
-        ++counts[j];
-        break;
-      }
-    }
+    ++counts[std::min(num / 200, 4)];
   }
 
+  std::cout << std::fixed << std::setprecision(2);
   for (const int count : counts) {
-    const double percentage = (static_cast<double>(count) / n) * 100;
-    std::cout << std::fixed << std::setprecision(2) << percentage << "%"
-              << '\n';
+    std::cout << static_cast<double>(count) / n * 100 << "%" << '\n';
   }
 
   return 0;
